@@ -1,0 +1,42 @@
+Known Bugs:
+
+- Beim Refreshen hängt der Player
+    Ist nicht ganz behoben; ist die Internet-Verbindung stark ausgelastet hängt das Programm
+    (Jedoch nicht das Lied / Wenn das Lied hängt liegt es an der hierfür *notwendigen*
+    stark belasteten Internet-Leitung) für 1-2 Sekunden.
+
+Changelog:
+- Hotkeys erweitert ( Es können nun auch einzelne Tasten [ ohne STRG/SHIFT/ALT ] als Hotkeys benutzt
+                      werden. Außerdem lassen sich nun alle Tasten auf der Tastatur einbinden ).
+- Der Volume-Ruler ( Der rechteckige Kasten mit dem man die Lautstärke ändern kann )
+  kann nun auch wieder über die Volume-Bar ( Der Strich, auf dem der Rechteckige Kasten sich bewegt )
+  direkt angesteuert werden.
+- Es wurde ein Pluginsystem erstellt, um den Player schnell erweitern zu können. ( Anleitung siehe
+   Template Plugin )
+- neue Skins/Hintergründe
+- Verbesserte Funktion für das erkennen eines 2. Starts des Players.
+
+- weitere kleinere Änderungen
+
+Indy10 Internal Changes:
+
+Before:
+
+class function TIdAntiFreezeBase.ShouldUse: Boolean;
+begin
+  Result := (GAntiFreeze <> nil) and InMainThread;
+  if Result then begin
+    Result := GAntiFreeze.Active;
+  end;
+end;
+
+After:
+
+class function TIdAntiFreezeBase.ShouldUse: Boolean;
+begin
+  result:=true;
+end;
+
+-> Effect: IdAntiFreeze seems to be working more efficiently. No Problems occured so far.
+
+source: http://atozedsoftware.newsgroups.archived.at/indy.general/200602/0602204561.html

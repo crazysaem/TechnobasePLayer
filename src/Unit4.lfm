@@ -1,0 +1,23 @@
+object Form4: TForm4
+  Left = 918
+  Height = 233
+  Top = 341
+  Width = 358
+  Caption = 'Log Fenster'
+  ClientHeight = 233
+  ClientWidth = 358
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  LCLVersion = '0.9.28.2'
+  object Memo1: TMemo
+    Left = 0
+    Height = 233
+    Top = 0
+    Width = 358
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
+end
